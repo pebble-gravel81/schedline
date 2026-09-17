@@ -1,0 +1,14 @@
+{
+  "name": "schedline",
+  "version": "0.1.0",
+  "description": "Streaming parser and pretty printer for the schedline spaced repetition schedule format",
+  "type": "module",
+  "main": "./src/index.ts",
+  "license": "MIT",
+  "author": "pebble-gravel81",
+  "scripts": {
+    "build": "tsc -p ."
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
