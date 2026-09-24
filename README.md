@@ -86,11 +86,29 @@ Fields are always emitted in the same order and `ease` is always rendered
 to two decimal places, so re-printing an unchanged schedule produces a
 byte-identical file, and a real change produces a small, readable diff.
 
+## cli
+
+Build once with `npm run build`, then:
+
+```
+node dist/cli.js validate reviews.schedline
+node dist/cli.js format reviews.schedline -o reviews.schedline
+node dist/cli.js diff before.schedline after.schedline
+```
+
+`validate` reports every invalid line (not just the first) and exits
+non-zero if any were found. `format` rewrites a file to canonical field
+order and exits non-zero without writing anything if the input has
+errors. `diff` compares two files by `id` and prints additions (`+`),
+removals (`-`), and per-field changes (`~`) for records that moved;
+it exits non-zero if anything differs, so it works as a CI drift check.
+
 ## status
 
-First working skeleton: format definition, streaming parser, in-memory and
-streaming printers. No CLI yet, no scheduling algorithm (this library
-handles the file format, not deciding when a card is next due).
+Format definition, streaming parser, in-memory and streaming printers,
+and a CLI (`validate`, `format`, `diff`). No scheduling algorithm yet
+(this library handles the file format, not deciding when a card is next
+due).
 
 ## license
 

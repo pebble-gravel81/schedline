@@ -4,6 +4,9 @@
   "description": "Streaming parser and pretty printer for the schedline spaced repetition schedule format",
   "type": "module",
   "main": "./src/index.ts",
+  "bin": {
+    "schedline": "./dist/cli.js"
+  },
   "license": "MIT",
   "author": "pebble-gravel81",
   "scripts": {
