@@ -106,7 +106,9 @@ it exits non-zero if anything differs, so it works as a CI drift check.
 ## status
 
 Format definition, streaming parser, in-memory and streaming printers,
-and a CLI (`validate`, `format`, `diff`). No scheduling algorithm yet
+and a CLI (`validate`, `format`, `diff`). Round-trip property tests cover
+the parser and printer, including arbitrary chunk boundaries through
+`parseStream`; run them with `npm test`. No scheduling algorithm yet
 (this library handles the file format, not deciding when a card is next
 due).
 

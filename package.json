@@ -10,7 +10,9 @@
   "license": "MIT",
   "author": "pebble-gravel81",
   "scripts": {
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "pretest": "npm run build",
+    "test": "node --test dist"
   },
   "dependencies": {},
   "devDependencies": {}
